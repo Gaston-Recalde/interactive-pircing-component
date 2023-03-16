@@ -13,7 +13,7 @@
         background-size: contain;
         margin-bottom: 35px;
 
-        &__h3{
+        &__h1{
             font-weight: 800;
             font-size: 20px;
             margin-bottom: 25px;
@@ -112,6 +112,10 @@
             }
         }
 
+        h2{
+            font-size: 32px;
+        }
+
         &__price{
             display: inline-block;
             font-size: 16px;
@@ -130,7 +134,9 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+            gap: 0;
             margin-bottom: 75px;
+            margin-left: 0;
 
             p{
                 color: $grayish-blue;
@@ -218,7 +224,7 @@
 
         .header{
 
-            &__h3{
+            &__h1{
                 font-size: 32px;
             }
 
@@ -232,32 +238,45 @@
             &::after{
                 top: 64%;
             }
-
-            .card__billing{
-                // display: flex;
-                // justify-content: space-around;
-                // align-items: center;
-                // margin-bottom: 75px;
-    
-                p{
-                    // color: $grayish-blue;
-                    // font-size: 13px;
-    
-                    // span{
-                    //     color: $light-red;
-                    //     padding: 2px 6px;
-                    //     background-color: $light-grayish-red;
-                    //     border-radius: 50px;
-                    // }
-    
-                    .span{
-                        display: inline-block;
-                    }
-                }
-            }
             
             .card__info{
                 grid-area: info;
+                display: grid;
+                grid-template-areas:
+                'card__span price'
+                'form form'
+                'billing billing';
+                align-items: center;
+
+                .card__span{
+                    grid-area: card__span;
+                }
+
+                .card__form{
+                    grid-area: form;
+                }
+
+                h2{
+                    grid-area: price;
+
+                    .card__price{
+                        margin-bottom: 0;
+                    }
+                }
+
+                .card__billing{
+                    grid-area: billing;
+                    justify-content: center;
+                    margin-left: 84px;
+                    gap: 15px;
+
+                    p{
+    
+                        .span{
+                            display: inline-block;
+                        }
+                    }
+                }
             }
             
             .card__pack{

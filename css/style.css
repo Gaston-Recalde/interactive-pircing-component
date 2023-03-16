@@ -39,7 +39,7 @@ body {
   background-size: contain;
   margin-bottom: 35px;
 }
-.container .header__h3 {
+.container .header__h1 {
   font-weight: 800;
   font-size: 20px;
   margin-bottom: 25px;
@@ -131,6 +131,9 @@ body {
 .container .card__form input[type=range]::-webkit-slider-thumb:active {
   cursor: grab;
 }
+.container .card h2 {
+  font-size: 32px;
+}
 .container .card__price {
   display: inline-block;
   font-size: 16px;
@@ -147,7 +150,9 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 0;
   margin-bottom: 75px;
+  margin-left: 0;
 }
 .container .card__billing p {
   color: hsl(225, 20%, 60%);
@@ -216,7 +221,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .container .header__h3 {
+  .container .header__h1 {
     font-size: 32px;
   }
   .container .header__p {
@@ -225,11 +230,32 @@ body {
   .container .main::after {
     top: 64%;
   }
-  .container .main .card__billing p .span {
-    display: inline-block;
-  }
   .container .main .card__info {
     grid-area: info;
+    display: grid;
+    grid-template-areas: "card__span price" "form form" "billing billing";
+    align-items: center;
+  }
+  .container .main .card__info .card__span {
+    grid-area: card__span;
+  }
+  .container .main .card__info .card__form {
+    grid-area: form;
+  }
+  .container .main .card__info h2 {
+    grid-area: price;
+  }
+  .container .main .card__info h2 .card__price {
+    margin-bottom: 0;
+  }
+  .container .main .card__info .card__billing {
+    grid-area: billing;
+    justify-content: center;
+    margin-left: 84px;
+    gap: 15px;
+  }
+  .container .main .card__info .card__billing p .span {
+    display: inline-block;
   }
   .container .main .card__pack {
     grid-area: pack;
