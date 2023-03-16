@@ -61,10 +61,15 @@ body {
   right: 0;
   top: 58%;
   border-bottom: 1px solid hsl(225, 20%, 60%);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .container .card {
   background-color: hsl(230, 100%, 99%);
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
   padding: 35px 25px;
   border-radius: 8px;
@@ -154,6 +159,9 @@ body {
   background-color: hsl(14, 92%, 95%);
   border-radius: 50px;
 }
+.container .card__billing p .span {
+  display: none;
+}
 .container .card__billing .toggle {
   width: 50px;
   height: 25px;
@@ -205,4 +213,35 @@ body {
   cursor: pointer;
   color: hsl(230, 100%, 99%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (min-width: 768px) {
+  .container .header__h3 {
+    font-size: 32px;
+  }
+  .container .header__p {
+    font-size: 16px;
+  }
+  .container .main::after {
+    top: 64%;
+  }
+  .container .main .card__billing p .span {
+    display: inline-block;
+  }
+  .container .main .card__info {
+    grid-area: info;
+  }
+  .container .main .card__pack {
+    grid-area: pack;
+    margin-left: 34px;
+  }
+  .container .main .card-btn {
+    grid-area: btn;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .container .main .card {
+    display: grid;
+    grid-template-areas: "info info" "pack btn";
+  }
 }/*# sourceMappingURL=style.css.map */
