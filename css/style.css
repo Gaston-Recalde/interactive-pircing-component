@@ -22,7 +22,7 @@ body {
 }
 
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: hsl(228, 45%, 44%);
 }
 
 .container {
@@ -45,7 +45,7 @@ body {
   margin-bottom: 25px;
 }
 .container .header__p {
-  color: hsl(225deg, 20%, 60%);
+  color: hsl(225, 20%, 60%);
   font-size: 14px;
   width: 60%;
   margin: auto;
@@ -60,10 +60,10 @@ body {
   left: 0;
   right: 0;
   top: 58%;
-  border-bottom: 1px solid hsl(225deg, 20%, 60%);
+  border-bottom: 1px solid hsl(225, 20%, 60%);
 }
 .container .card {
-  background-color: hsl(230deg, 100%, 99%);
+  background-color: hsl(230, 100%, 99%);
   width: 100%;
   text-align: center;
   padding: 35px 25px;
@@ -71,52 +71,72 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .container .card__span {
-  color: hsl(225deg, 20%, 60%);
+  color: hsl(225, 20%, 60%);
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
-.container .card__progress {
+.container .card__form {
   width: 100%;
-  height: 10px;
-  background-color: hsl(174deg, 77%, 80%);
   border-radius: 50px;
   margin: 45px 0;
-  position: relative;
 }
-.container .card__progress .progress-btn {
+.container .card__form input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 10px;
+  border-radius: 50px;
+  background-color: hsl(174, 77%, 80%);
+  outline: none;
+}
+.container .card__form input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
   width: 45px;
   height: 45px;
-  border-radius: 50%;
-  background-color: hsl(174deg, 86%, 45%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -15px;
-  left: 40%;
-}
-.container .card__progress .progress-btn:hover {
+  border: 0;
+  border-radius: 150px;
+  background-color: hsl(174, 77%, 80%);
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.282);
   cursor: pointer;
 }
-.container .card__progress .progress-btn img {
-  width: 50%;
-  height: 50%;
+.container .card__form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  border-radius: 150px;
+  background-color: hsl(174, 86%, 45%);
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.282);
+  cursor: pointer;
+}
+.container .card__form input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0px 10px 15px rgb(165, 243, 235);
+}
+.container .card__form input[type=range]::-webkit-slider-thumb:active {
+  cursor: grab;
 }
 .container .card__price {
+  display: inline-block;
   font-size: 16px;
-  color: hsl(225deg, 20%, 60%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+  color: hsl(225, 20%, 60%);
   margin-bottom: 45px;
 }
-.container .card__price span {
-  color: hsl(227deg, 35%, 25%);
+.container .card .price {
+  color: hsl(227, 35%, 25%);
   font-weight: 800;
   font-size: 32px;
+  margin-right: 15px;
 }
 .container .card__billing {
   display: flex;
@@ -125,34 +145,34 @@ body {
   margin-bottom: 75px;
 }
 .container .card__billing p {
-  color: hsl(225deg, 20%, 60%);
+  color: hsl(225, 20%, 60%);
   font-size: 13px;
 }
 .container .card__billing p span {
-  color: hsl(15deg, 100%, 70%);
+  color: hsl(15, 100%, 70%);
   padding: 2px 6px;
-  background-color: hsl(14deg, 92%, 95%);
+  background-color: hsl(14, 92%, 95%);
   border-radius: 50px;
 }
 .container .card__billing .toggle {
   width: 50px;
   height: 25px;
   padding: 5px;
-  background-color: hsl(223deg, 50%, 87%);
+  background-color: hsl(223, 50%, 87%);
   border-radius: 50px;
   position: relative;
   transition: all 400ms ease-in-out;
 }
 .container .card__billing .toggle:hover {
   cursor: pointer;
-  background-color: hsl(174deg, 77%, 80%);
+  background-color: hsl(174, 77%, 80%);
 }
 .container .card__billing .toggle .toggle-btn {
   position: absolute;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: hsl(224deg, 65%, 95%);
+  background-color: hsl(224, 65%, 95%);
 }
 .container .card__billing .toggle .toggle-btn-active {
   right: 5px;
@@ -168,7 +188,7 @@ body {
   margin-bottom: 15px;
 }
 .container .card__pack .pack-info p {
-  color: hsl(225deg, 20%, 60%);
+  color: hsl(225, 20%, 60%);
   font-size: 12px;
 }
 .container .card-btn {
@@ -178,10 +198,11 @@ body {
   padding: 15px 25px;
   width: 200px;
   border-radius: 50px;
-  background-color: hsl(227deg, 35%, 25%);
-  color: hsl(226deg, 100%, 87%);
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(226, 100%, 87%);
 }
 .container .card-btn:hover {
   cursor: pointer;
-  color: hsl(230deg, 100%, 99%);
+  color: hsl(230, 100%, 99%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }/*# sourceMappingURL=style.css.map */
