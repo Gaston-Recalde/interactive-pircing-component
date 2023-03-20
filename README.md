@@ -15,11 +15,11 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./images/interactive-pircing.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://wondrous-seahorse-8ee12c.netlify.app/)
 
 ## My process
 
